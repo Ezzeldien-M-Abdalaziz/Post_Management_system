@@ -63,4 +63,6 @@ PostHub is a modern post management platform designed for content creators and t
     admin@example.com
     123
 
+### postman link
+https://www.postman.com/angular-nodejs/workspace/posthub
 
