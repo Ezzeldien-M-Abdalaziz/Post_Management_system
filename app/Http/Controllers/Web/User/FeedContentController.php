@@ -20,7 +20,7 @@ class FeedContentController extends Controller
             ->where('visibility', true)
             ->where('user_id', '!=', Auth::id()) // Exclude posts by the authenticated user
             ->latest()
-            ->get();
+            ->paginate(9);
             return response()->json($posts);
     }
 }

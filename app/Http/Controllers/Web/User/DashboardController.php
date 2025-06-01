@@ -17,7 +17,7 @@ class DashboardController extends Controller
     public function posts()
     {
         $user = Auth::user();
-        $posts = $user->posts()->latest()->get();
+        $posts = $user->posts()->latest()->paginate(9);
 
         return response()->json($posts);
     }
