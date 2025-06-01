@@ -19,7 +19,7 @@ class PostFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence(),
-            'content' => $this->faker->paragraph(),
+            'content' => $this->faker->paragraph(5),
             'visibility' => $this->faker->boolean(),
             'user_id' => User::inRandomOrder()->first()->id,
         ];

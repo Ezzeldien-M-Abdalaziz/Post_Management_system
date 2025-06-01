@@ -50,13 +50,19 @@
         <!-- Mobile Navigation -->
         <div class="md:hidden border-t bg-white hidden" id="mobile-menu">
           <div class="px-2 pt-2 pb-3 space-y-1">
-            <a href="#" class="text-gray-900 block px-3 py-2 text-base font-medium">Dashboard</a>
-            <a href="#" class="text-gray-500 hover:text-gray-900 block px-3 py-2 text-base font-medium">Posts</a>
-            <div class="pt-2">
-              <a href="{{ route('login.form') }}" class="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-base font-medium transition-colors">
-                login
-              </a>
-            </div>
+            <a href="{{ route('dashboard.index') }}" class="text-gray-900 block px-3 py-2 text-base font-medium">Dashboard</a>
+            <a href="{{ route('feed.index') }}" class="text-gray-500 hover:text-gray-900 block px-3 py-2 text-base font-medium">Posts</a>
+            @if (Auth::check())
+            <form method="POST" action="{{ route('logout') }}" class="inline">
+              @csrf
+              <button class="text-gray-700 hover:text-brand-500 block px-3 py-2 text-base font-medium">Logout</button>
+            </form>
+            @elseif (Route::has('login.form'))
+            <a href="{{ route('login.form') }}" class="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-base font-medium transition-colors">
+              login
+            </a>
+            @endif
+
           </div>
         </div>
       </div>
