@@ -1,6 +1,5 @@
 # PostHub - Post Management Platform
 
-![PostHub Logo](https://via.placeholder.com/150x50?text=PostHub) <!-- Replace with your actual logo -->
 
 PostHub is a modern post management platform designed for content creators and teams to create, manage, and organize their posts efficiently.
 
@@ -49,5 +48,19 @@ PostHub is a modern post management platform designed for content creators and t
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/posthub.git
+   git clone https://github.com/Ezzeldien-M-Abdalaziz/Post_Management_system.git
    cd posthub
+   cp .env.example .env
+   php artisan key:generate    
+   php artisan migrate
+   php artisan db:seed
+
+2. user Credentials
+    user@example.com
+    123
+
+3. admin Credentials
+    admin@example.com
+    123
+
+
